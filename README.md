@@ -1,16 +1,30 @@
 # digital_clock
 
-A new Flutter project.
+A digital clock created on Flutter. This project is an example of implement graphic and animation purely without any 3rd party package.
+
+<p float="left">
+  <img hspace="10" src="docs/screenshot1.gif" alt="screenshot with pixel3" height=280>
+
+</p>
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+### Clone this project and access it directory
 
-A few resources to get you started if this is your first Flutter project:
+```
+git clone https://github.com/Cheersupzoo/digital_clock.git
+cd digital_clock
+```
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+### Install dependency
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```
+flutter pub get
+```
+
+### Run the app
+
+```
+flutter run
+```
+
