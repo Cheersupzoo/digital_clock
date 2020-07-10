@@ -91,31 +91,8 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
         backgroundColor: isDark.value ? Colors.grey[900] : Colors.grey[50],
         body: SafeArea(
-                  child: Stack(children: <Widget>[
-            Align(
-                alignment: Alignment.bottomCenter,
-                child: SizedBox(
-                    width: MediaQuery.of(context).size.width,
-                    height: MediaQuery.of(context).size.height / 6,
-                    child: Wave(
-                      color: Colors.grey[700],
-                    ))),
-            Align(
-                alignment: Alignment.bottomCenter,
-                child: SizedBox(
-                    width: MediaQuery.of(context).size.width,
-                    height: MediaQuery.of(context).size.height / 6.5,
-                    child: Wave(
-                      color: Colors.black38,
-                    ))),
-            Align(
-                alignment: Alignment.bottomCenter,
-                child: SizedBox(
-                    width: MediaQuery.of(context).size.width,
-                    height: MediaQuery.of(context).size.height / 7,
-                    child: Wave(
-                      color: Colors.black26,
-                    ))),
+          child: Stack(children: <Widget>[
+            _buildBackgroundWave(context),
             Center(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -128,26 +105,64 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
               ),
             ),
-            Positioned(
-              top: 16,
-              right: 16,
-              child: Switch(
-                  value: isDark.value,
-                  activeColor: Colors.grey[600],
-                  onChanged: (state) {
-                    isDark.value = state;
-                    setState(() {});
-                  }),
-            )
+            _buildSwitch()
           ]),
         ));
+  }
+
+  Positioned _buildSwitch() {
+    return Positioned(
+            top: 16,
+            right: 16,
+            child: Switch(
+                value: isDark.value,
+                activeColor: Colors.grey[600],
+                onChanged: (state) {
+                  isDark.value = state;
+                  setState(() {});
+                }),
+          );
+  }
+
+  Stack _buildBackgroundWave(BuildContext context) {
+    return Stack(
+            children: <Widget>[
+              Align(
+                  alignment: Alignment.bottomCenter,
+                  child: SizedBox(
+                      width: MediaQuery.of(context).size.width,
+                      height: MediaQuery.of(context).size.height / 6,
+                      child: Wave(
+                        color: Colors.grey[700],
+                      ))),
+              Align(
+                  alignment: Alignment.bottomCenter,
+                  child: SizedBox(
+                      width: MediaQuery.of(context).size.width,
+                      height: MediaQuery.of(context).size.height / 6.5,
+                      child: Wave(
+                        color: Colors.black38,
+                      ))),
+              Align(
+                  alignment: Alignment.bottomCenter,
+                  child: SizedBox(
+                      width: MediaQuery.of(context).size.width,
+                      height: MediaQuery.of(context).size.height / 7,
+                      child: Wave(
+                        color: Colors.black26,
+                      ))),
+            ],
+          );
   }
 
   Row _buildDot() {
     return Row(
       children: <Widget>[
         SizedBox(width: dashHeight / 2),
-        Container(width: dashWidth, height: dashWidth, color: isDark.value ? Colors.grey[300] : Colors.grey[850]),
+        Container(
+            width: dashWidth,
+            height: dashWidth,
+            color: isDark.value ? Colors.grey[300] : Colors.grey[850]),
         SizedBox(width: dashHeight / 2),
       ],
     );
