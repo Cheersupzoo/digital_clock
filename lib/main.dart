@@ -112,47 +112,47 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Positioned _buildSwitch() {
     return Positioned(
-            top: 16,
-            right: 16,
-            child: Switch(
-                value: isDark.value,
-                activeColor: Colors.grey[600],
-                onChanged: (state) {
-                  isDark.value = state;
-                  setState(() {});
-                }),
-          );
+      top: 16,
+      right: 16,
+      child: Switch(
+          value: isDark.value,
+          activeColor: Colors.grey[600],
+          onChanged: (state) {
+            isDark.value = state;
+            setState(() {});
+          }),
+    );
   }
 
   Stack _buildBackgroundWave(BuildContext context) {
     return Stack(
-            children: <Widget>[
-              Align(
-                  alignment: Alignment.bottomCenter,
-                  child: SizedBox(
-                      width: MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height / 6,
-                      child: Wave(
-                        color: Colors.grey[700],
-                      ))),
-              Align(
-                  alignment: Alignment.bottomCenter,
-                  child: SizedBox(
-                      width: MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height / 6.5,
-                      child: Wave(
-                        color: Colors.black38,
-                      ))),
-              Align(
-                  alignment: Alignment.bottomCenter,
-                  child: SizedBox(
-                      width: MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height / 7,
-                      child: Wave(
-                        color: Colors.black26,
-                      ))),
-            ],
-          );
+      children: <Widget>[
+        Align(
+            alignment: Alignment.bottomCenter,
+            child: SizedBox(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height / 6,
+                child: Wave(
+                  color: Colors.grey[700],
+                ))),
+        Align(
+            alignment: Alignment.bottomCenter,
+            child: SizedBox(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height / 6.5,
+                child: Wave(
+                  color: Colors.black38,
+                ))),
+        Align(
+            alignment: Alignment.bottomCenter,
+            child: SizedBox(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height / 7,
+                child: Wave(
+                  color: Colors.black26,
+                ))),
+      ],
+    );
   }
 
   Row _buildDot() {
