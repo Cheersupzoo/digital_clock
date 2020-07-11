@@ -93,18 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
         body: SafeArea(
           child: Stack(children: <Widget>[
             _buildBackgroundWave(context),
-            Center(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  _buildHourDash(),
-                  _buildDot(),
-                  _buildMinuteDash(),
-                  _buildDot(),
-                  _buildSecondDash(),
-                ],
-              ),
-            ),
+            _buildClock(),
             _buildSwitch()
           ]),
         ));
@@ -112,61 +101,16 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Center _buildClock() {
     return Center(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                _buildHourDash(),
-                _buildDot(),
-                _buildMinuteDash(),
-                _buildDot(),
-                _buildSecondDash(),
-              ],
-            ),
-          );
-  }
-
-  Positioned _buildSwitch() {
-    return Positioned(
-      top: 16,
-      right: 16,
-      child: Switch(
-          value: isDark.value,
-          activeColor: Colors.grey[600],
-          onChanged: (state) {
-            isDark.value = state;
-            setState(() {});
-          }),
-    );
-  }
-
-  Stack _buildBackgroundWave(BuildContext context) {
-    return Stack(
-      children: <Widget>[
-        Align(
-            alignment: Alignment.bottomCenter,
-            child: SizedBox(
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height / 6,
-                child: Wave(
-                  color: Colors.grey[700],
-                ))),
-        Align(
-            alignment: Alignment.bottomCenter,
-            child: SizedBox(
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height / 6.5,
-                child: Wave(
-                  color: Colors.black38,
-                ))),
-        Align(
-            alignment: Alignment.bottomCenter,
-            child: SizedBox(
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height / 7,
-                child: Wave(
-                  color: Colors.black26,
-                ))),
-      ],
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          _buildHourDash(),
+          _buildDot(),
+          _buildMinuteDash(),
+          _buildDot(),
+          _buildSecondDash(),
+        ],
+      ),
     );
   }
 
@@ -236,6 +180,51 @@ class _MyHomePageState extends State<MyHomePage> {
           numberNotifier: hour0,
           isDark: isDark,
         ),
+      ],
+    );
+  }
+
+  Positioned _buildSwitch() {
+    return Positioned(
+      top: 16,
+      right: 16,
+      child: Switch(
+          value: isDark.value,
+          activeColor: Colors.grey[600],
+          onChanged: (state) {
+            isDark.value = state;
+            setState(() {});
+          }),
+    );
+  }
+
+  Stack _buildBackgroundWave(BuildContext context) {
+    return Stack(
+      children: <Widget>[
+        Align(
+            alignment: Alignment.bottomCenter,
+            child: SizedBox(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height / 6,
+                child: Wave(
+                  color: Colors.grey[700],
+                ))),
+        Align(
+            alignment: Alignment.bottomCenter,
+            child: SizedBox(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height / 6.5,
+                child: Wave(
+                  color: Colors.black38,
+                ))),
+        Align(
+            alignment: Alignment.bottomCenter,
+            child: SizedBox(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height / 7,
+                child: Wave(
+                  color: Colors.black26,
+                ))),
       ],
     );
   }
