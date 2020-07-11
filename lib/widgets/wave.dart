@@ -17,7 +17,7 @@ class _WaveState extends State<Wave> with TickerProviderStateMixin {
 
   @override
   void initState() {
-    randomOffset = Random().nextInt(40)/0.1;
+    randomOffset = Random().nextInt(63)/10;
     color = widget.color ?? Colors.grey[800];
     time = AnimationController(vsync: this,duration: Duration(seconds: 40));
     time.addListener(() {
