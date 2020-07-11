@@ -52,7 +52,7 @@ class _DashVerticalState extends State<DashVertical>
     currentCloseColor = isDark.value ? offColorDark : offColorLight;
   }
 
-  void updateClock() {
+  void updateDash() {
     if (widget.status.value) {
       currentOpenColor = isDark.value ? onColorDark : onColorLight;
       currentCloseColor = isDark.value ? offColorDark : offColorLight;
@@ -72,14 +72,13 @@ class _DashVerticalState extends State<DashVertical>
     animationController.addListener(() {
       setState(() {});
     });
-    //animationController.repeat();
     animationValue = Tween<double>(begin: 0.0, end: 1.0).animate(
         CurvedAnimation(
             parent: animationController,
             curve: Interval(0.0, 1.0, curve: Curves.fastLinearToSlowEaseIn)));
 
-    widget.status.addListener(updateClock);
-    widget.isDark.addListener(updateClock);
+    widget.status.addListener(updateDash);
+    widget.isDark.addListener(updateDash);
     super.initState();
   }
 
@@ -101,18 +100,18 @@ class _DashVerticalState extends State<DashVertical>
         child: animationValue.value > 0.5
             ? CustomPaint(
                 size: Size(width, height),
-                painter: DashPainter(currentCloseColor))
+                painter: DashVerticalPainter(currentCloseColor))
             : CustomPaint(
                 size: Size(width, height),
-                painter: DashPainter(currentOpenColor),
+                painter: DashVerticalPainter(currentOpenColor),
               ));
   }
 }
 
-class DashPainter extends CustomPainter {
+class DashVerticalPainter extends CustomPainter {
   Color dashColor;
 
-  DashPainter(this.dashColor);
+  DashVerticalPainter(this.dashColor);
 
   @override
   void paint(Canvas canvas, Size size) {

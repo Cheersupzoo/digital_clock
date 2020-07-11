@@ -78,36 +78,29 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    // calculate Dash length
-    if ((MediaQuery.of(context).size.width /
-            MediaQuery.of(context).size.height) <
-        (14.3 / 5)) {
-      dashWidth = MediaQuery.of(context).size.width / (143 / 2);
-      dashHeight = dashWidth * 5;
-    } else {
-      dashHeight = (MediaQuery.of(context).size.height - 100.0) / (13 / 5);
-      dashWidth = dashHeight / 5;
-    }
     return Scaffold(
-        backgroundColor: isDark.value ? Colors.grey[900] : Colors.grey[50],
         body: SafeArea(
           child: Stack(children: <Widget>[
             _buildBackgroundWave(context),
-            Center(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  _buildHourDash(),
-                  _buildDot(),
-                  _buildMinuteDash(),
-                  _buildDot(),
-                  _buildSecondDash(),
-                ],
-              ),
-            ),
+            _buildClock(),
             _buildSwitch()
           ]),
         ));
+  }
+
+  Center _buildClock() {
+    return Center(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                _buildHourDash(),
+                _buildDot(),
+                _buildMinuteDash(),
+                _buildDot(),
+                _buildSecondDash(),
+              ],
+            ),
+          );
   }
 
   Positioned _buildSwitch() {
