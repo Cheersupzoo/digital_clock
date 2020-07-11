@@ -32,7 +32,7 @@ class _DigitState extends State<Digit> {
   void initState() {
     widget.numberNotifier.addListener(() {
       for (var i = 0; i < 7; i++)
-        digit.dash[i].value = unitTo7Seg[widget.numberNotifier.value][i];
+        digit.dash[i].value = digitTo7Seg[widget.numberNotifier.value][i];
     });
     super.initState();
   }
@@ -145,7 +145,7 @@ class _DigitState extends State<Digit> {
     );
   }
 
-  var unitTo7Seg = [
+  var digitTo7Seg = [
     [false, false, false, false, false, false, true],   // 0
     [true, false, false, true, true, true, true],       // 1
     [false, false, true, false, false, true, false],    // 2
