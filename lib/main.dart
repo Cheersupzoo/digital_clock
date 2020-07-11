@@ -205,7 +205,7 @@ class _MyHomePageState extends State<MyHomePage> {
             alignment: Alignment.bottomCenter,
             child: SizedBox(
                 width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height / 6,
+                height: MediaQuery.of(context).size.height / 4,
                 child: Wave(
                   color: Colors.grey[700],
                 ))),
@@ -213,7 +213,7 @@ class _MyHomePageState extends State<MyHomePage> {
             alignment: Alignment.bottomCenter,
             child: SizedBox(
                 width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height / 6.5,
+                height: MediaQuery.of(context).size.height / 4.5,
                 child: Wave(
                   color: Colors.black38,
                 ))),
@@ -221,7 +221,7 @@ class _MyHomePageState extends State<MyHomePage> {
             alignment: Alignment.bottomCenter,
             child: SizedBox(
                 width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height / 7,
+                height: MediaQuery.of(context).size.height / 5,
                 child: Wave(
                   color: Colors.black26,
                 ))),

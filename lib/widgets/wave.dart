@@ -3,7 +3,7 @@ import 'dart:math';
 
 class Wave extends StatefulWidget {
   Wave({Key key, this.color}) : super(key: key);
-  Color color;
+  final Color color;
 
   @override
   _WaveState createState() => _WaveState();
@@ -53,7 +53,7 @@ class WavePainter extends CustomPainter {
     final width = size.width;
     final height = size.height;
     final highestWaveHeight =
-        (2 * sin(0.3 * (pi / 2)) + 5 * sin(0.7 * (pi / 2))) * 0.2;
+        (6 * sin(pi / 2) + (6 + sin(pi/2)) * sin(pi / 2)) * 4;
 
     Path path = Path();
     path.moveTo(0, ypos(0) + highestWaveHeight);
