@@ -154,7 +154,7 @@ class _DigitState extends State<Digit> {
     [false, true, false, false, true, false, false],    // 5
     [false, true, false, false, false, false, false],   // 6
     [false, false, false, true, true, true, true],      // 7
-    [false, false, false, false, false, false, false],  //  8
+    [false, false, false, false, false, false, false],  // 8
     [false, false, false, false, true, false, false],   // 9
   ];
 }
