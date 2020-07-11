@@ -158,3 +158,15 @@ class _DigitState extends State<Digit> {
     [false, false, false, false, true, false, false],   // 9
   ];
 }
+
+class DigitDash {
+  List<ValueNotifier<bool>> dash = [
+    ValueNotifier<bool>(false),
+    ValueNotifier<bool>(false),
+    ValueNotifier<bool>(false),
+    ValueNotifier<bool>(false),
+    ValueNotifier<bool>(false),
+    ValueNotifier<bool>(false),
+    ValueNotifier<bool>(false)
+  ];
+}

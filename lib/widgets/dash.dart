@@ -237,7 +237,7 @@ class _DashHorizontalState extends State<DashHorizontal>
     height = widget.height;
     return Transform(
         transform: Matrix4.identity()
-          ..setEntry(3, 2, 0.001)
+          ..setEntry(3, 1, 0.001)
           ..rotateX(1 * pi * animationValue.value),
         alignment: Alignment.center,
         child: animationValue.value > 0.5
@@ -284,16 +284,4 @@ class DashHorizontalPainter extends CustomPainter {
   bool shouldRepaint(CustomPainter oldCanvas) {
     return true;
   }
-}
-
-class DigitDash {
-  List<ValueNotifier<bool>> dash = [
-    ValueNotifier<bool>(false),
-    ValueNotifier<bool>(false),
-    ValueNotifier<bool>(false),
-    ValueNotifier<bool>(false),
-    ValueNotifier<bool>(false),
-    ValueNotifier<bool>(false),
-    ValueNotifier<bool>(false)
-  ];
 }
