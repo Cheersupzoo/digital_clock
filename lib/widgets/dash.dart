@@ -212,7 +212,7 @@ class _DashHorizontalState extends State<DashHorizontal>
     animationController.addListener(() {
       setState(() {});
     });
-    //animationController.repeat();
+
     animationValue = Tween<double>(begin: 0.0, end: 1.0).animate(
         CurvedAnimation(
             parent: animationController,
